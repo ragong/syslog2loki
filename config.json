@@ -1,0 +1,24 @@
+{
+  "SyslogBind": "0.0.0.0:514",
+  "LokiServer": "http://192.168.6.12:3100",
+  "ScrapeConfig": [
+    {
+      "Tag": "nginxLog",
+      "Labels": {
+        "AppName":"Nginx",
+        "ServerName": "6.175",
+        "OS":"Centos",
+        "NgxVersion": "nginx/1.22.1"
+      }
+    },
+    {
+      "Tag": "192.168.6.176",
+      "Labels": {
+        "AppName":"NginxWithIpTag",
+        "ServerName": "6.175",
+        "OS":"Centos",
+        "NgxVersion": "nginx/1.22.1"
+      }
+    }
+  ]
+}
