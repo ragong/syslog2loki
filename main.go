@@ -3,7 +3,7 @@ package main
 import (
 	"encoding/json"
 	"flag"
-	"io/ioutil"
+	"io"
 	"log/slog"
 	"os"
 	"os/signal"
@@ -76,8 +76,10 @@ func readBytes(filePath string) ([]byte, error) {
 	if err != nil {
 		return nil, err
 	}
-	defer file.Close()
-	data, err := ioutil.ReadAll(file)
+	defer func() {
+		_ = file.Close()
+	}()
+	data, err := io.ReadAll(file)
 	if err != nil {
 		return nil, err
 	}

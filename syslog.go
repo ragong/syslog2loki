@@ -33,7 +33,7 @@ func (s *SyslogServer) Listen() {
 	} else {
 		slog.Info("[Syslog]" + "Successfully initialized Syslog service:,bind on " + s.c.SyslogBind)
 	}
-	server.Boot()
+	_ = server.Boot()
 	go func(channel syslog.LogPartsChannel) {
 		for logParts := range channel {
 			slog.Debug("[Syslog]" + fmt.Sprint(logParts))
