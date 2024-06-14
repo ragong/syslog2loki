@@ -12,7 +12,7 @@ Different protocol versions may have different log labels.
 ```json lines
 {
   "SyslogBind": "0.0.0.0:514",
-  "LokiServer": "http://10.227.11.61:13100",
+  "LokiServer": "http://192.168.6.17:3100",
   "ScrapeConfig": [
     {
       "Tag": "nginxLog",
